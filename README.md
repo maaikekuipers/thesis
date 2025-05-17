@@ -19,12 +19,14 @@ To set up the environment for running this project, follow these steps:
    pip install playwright  
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
+   ```
 
 4. **Clone this Project to your Device**  
 
 5. **Install required Python packages:**  
    ```bash
    pip install -r requirements.txt
+   ```
 
 6. **Store authentication cookies for YouTube (used for label scraping):**  
    - Open a terminal and run the following command to start Playwright’s code generation tool:  
@@ -50,9 +52,11 @@ To set up the environment for running this project, follow these steps:
 - **YouTube Shorts:**  
   ```bash
   python YouTube/hashtag_search.py
+  ```
 - **TikTok Videos:**
   ```bash
   python TikTok/hashtag_search.py
+  ```
   
 (Ensure PLATFORM and SEARCH_HASHTAG are set correctly in the script.) Repeat this for several hashtags and VPN locations.
 
@@ -64,6 +68,7 @@ To set up the environment for running this project, follow these steps:
 ### 3. AI-Generated Content Label Check (YouTube Shorts Only)
   ```bash
   python YouTube/label_check.py
+  ```
 
 This script visits YouTube Shorts and checks for AI-generated content labels using Playwright.
 
