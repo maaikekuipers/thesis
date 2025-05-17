@@ -75,7 +75,7 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
 ## Notes  
 
 - API keys and cookies are managed through variables in the scripts.  
-  Ensure a valid API key is provided in `YouTube/hashtag_search.py` before running.
+  Ensure a valid API key is provided in `YouTube/hashtag_search.py` and `final_hashtag_check.py` before running.
 
 - Playwright may prompt for browser installation during the first run.
 
