@@ -20,24 +20,17 @@ To set up the environment for running this project, follow these steps:
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
 
-5. **Clone or download the project files to your local machine.**  
-   - If using Git, run:  
-     ```bash
-     git clone <repository-url>
-     ```  
-   - Or manually download and extract the files from the repository.
-
-6. **Open a terminal and navigate to the project directory.**  
+4. **Open a terminal and navigate to the project directory.**  
    - Example:  
      ```bash
      cd path/to/your/project
      ```
 
-7. **Install required Python packages:**  
+5. **Install required Python packages:**  
    ```bash
    pip install -r requirements.txt
 
-8. **Store authentication cookies for YouTube (used for label scraping):**  
+6. **Store authentication cookies for YouTube (used for label scraping):**  
    - Open a terminal and run the following command to start Playwright’s code generation tool:  
      ```bash
      playwright codegen youtube.com --save-storage=YouTube/youtube_cookies.json
@@ -49,7 +42,7 @@ To set up the environment for running this project, follow these steps:
    - *Important:* Ensure that the `youtube_cookies.json` file is stored in the `YouTube` folder.  
    - This cookie file is required for authenticated access during YouTube label verification.
   
-9. **Use a VPN to Simulate Geographic Locations:**  
+7. **Use a VPN to Simulate Geographic Locations:**  
    - To simulate different geographic locations during data collection, use a **VPN**.  
    - The VPN service used for this project was **Surfshark**, but other providers can also be used.  
    - Activate the VPN and select the target country **before** running the scraping scripts.
