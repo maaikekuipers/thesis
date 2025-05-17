@@ -18,15 +18,20 @@ To set up the environment for running this project, follow these steps:
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
 
-5. Set up YouTube API Access (required for fetching video metadata):
+4. Set up YouTube API Access (required for fetching video metadata):
    YouTube Data API v3 Guide: https://developers.google.com/youtube/v3/getting-started
 
-6. Clone or download the project files to your local machine.
+5. Clone or download the project files to your local machine.
 
-7. Open a terminal and navigate to the project directory.
+6. Open a terminal and navigate to the project directory.
 
-8. Install required Python packages:
+7. Install required Python packages:
    pip install -r requirements.txt
+
+8. Store authentication cookies for YouTube (used for label scraping):
+   playwright codegen youtube.com --save-storage=youtube_cookies.json
+   Click on “Reject all cookies” when prompted.
+   Then close the browser window to save the cookies.
 
 ## How to Run the Scripts
 
