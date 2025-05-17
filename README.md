@@ -12,16 +12,16 @@ To set up the environment for running this project, follow these steps:
 1. **Ensure you have Python installed on your machine.**
 
 2. **Install Git** (required to clone repositories):  
-   [Git Installation Guide](https://github.com/git-guides/install-git)  
+   [Git Installation Guide](https://github.com/git-guides/install-git)
 
-3. **Install Playwright** (used for automated browser scraping):  
+3. **Clone this Project to your Device**  
+
+4. **Install Playwright** (used for automated browser scraping):  
    ```bash
    pip install playwright  
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
    ```
-
-4. **Clone this Project to your Device**  
 
 5. **Install required Python packages:**  
    ```bash
