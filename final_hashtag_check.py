@@ -12,7 +12,7 @@ HASHTAG_JSON = f'data/hashtag_set.json'
 URL_JSONS_TIKTOK = f'data/tiktok'
 URL_JSONS_YOUTUBE = f'data/youtube'
 COUNTRIES = ["NL", "US", "UK"]
-API_KEY_YOUTUBE = "AIzaSyATkdqf9FkrH4zuzf56_JdXB3ug2NY67Oo"  # Fill in the API-key
+API_KEY_YOUTUBE = "..."  # Fill in the API-key
 
 with open(HASHTAG_JSON, 'r') as f:
     hashtag_set = json.load(f)
