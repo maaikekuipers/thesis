@@ -1,8 +1,4 @@
 # EPA2942 Master Thesis Maaike Kuipers
-install git: https://github.com/git-guides/install-git
-terminal run (kan ook in de requirements trouwens) pip install git+https://github.com/davidteather/TikTok-Api.git 
-
-dit werrkkttt :) 
 
 ## Introduction
 This project focuses on scraping and analyzing AI-generated content labels on TikTok and YouTube Shorts. It collects video URLs based on hashtags, retrieves metadata using platform APIs, and analyzes the presence and impact of AI-content labels.
@@ -18,16 +14,18 @@ To set up the environment for running this project, follow these steps:
    Git Installation Guide: https://github.com/git-guides/install-git
 
 3. Install Playwright (used for automated browser scraping):
+   pip install playwright
+   playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
 
-4. Set up YouTube API Access (required for fetching video metadata):
+5. Set up YouTube API Access (required for fetching video metadata):
    YouTube Data API v3 Guide: https://developers.google.com/youtube/v3/getting-started
 
-5. Clone or download the project files to your local machine.
+6. Clone or download the project files to your local machine.
 
-6. Open a terminal and navigate to the project directory.
+7. Open a terminal and navigate to the project directory.
 
-7. Install required Python packages:
+8. Install required Python packages:
    pip install -r requirements.txt
 
 ## How to Run the Scripts
@@ -43,33 +41,38 @@ To set up the environment for running this project, follow these steps:
   python final_hashtag_check.py
 
 3. AI-Generated Content Label Check (YouTube Shorts Only)
-  python label_check.py
+  python YouTube/label_check.py
 
 This script visits YouTube Shorts and checks for AI-generated content labels using Playwright.
 
 ## Notes
 
-- API keys and cookies are managed through variables in the scripts. Ensure valid API keys are in place before running.
+- API keys and cookies are managed through variables in the scripts. Ensure valid API key are in the YouTube hashtag_search.py before running.
 - Playwright may prompt for browser installation during the first run.
+- Ensure that headless = False when you run the platforms specific hashtag_search.py. 
 - TikTok scraping requires manual captcha solving. A 30-second pause is included to handle this.
 
 ## Project Structure
 
-├── data/                         # Contains input/output datasets and JSON files
-│   ├── hashtag_set.json          # Maintains the list of searched hashtags
-│   └── ...                       # Folder structure for TikTok and YouTube data
-├── final_hashtag_check.py        # Final check for missing URLs and metadata collection
-├── hashtag_search.py             # Script to scrape videos based on hashtags (YouTube or TikTok)
-├── label_check.py                # Checks for AI-generated content labels on YouTube Shorts
-├── tiktok_api.py                 # TikTok scraping and API interaction module
-└── youtube_api.py                # YouTube scraping and API interaction module
+├── TikTok/
+│   ├── hashtag_search.py       # Scrape TikTok videos by hashtag
+│   └── tiktok_api.py           # TikTok scraping and API functions
+│
+├── YouTube/
+│   ├── hashtag_search.py       # Scrape YouTube Shorts videos by hashtag
+│   ├── label_check.py          # Check AI content labels on YouTube Shorts
+│   ├── youtube_api.py          # YouTube API interaction and scraping
+│   └── youtube_cookies.json    # Cookies for authenticated YouTube scraping
+│
+├── final_hashtag_check.py      # Final check for missing URLs and metadata collection
+├── requirements.txt            # Required Python packages
+└── README.md                   # Project documentation
 
 Script Overview
 
 - hashtag_search.py
-  - Scrapes video URLs for a specific hashtag.
+  - Scrapes video URLs for a specific hashtag and specific platform.
   - Saves metadata to CSV and JSON files.
-  - Supports both TikTok and YouTube (edit PLATFORM and SEARCH_HASHTAG).
 
 - final_hashtag_check.py
   - Performs a final check for missing URLs from earlier searches.
@@ -85,4 +88,4 @@ Script Overview
 
 - youtube_api.py
   - Handles YouTube scraping and API interactions.
-  - Retrieves Shorts video metadata and engagement statistics.
+  - Retrieves Shorts video metadata.
