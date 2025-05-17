@@ -86,8 +86,8 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
   A 30-second pause is included in the script to handle this.
 
 
-## Project Structure
-<details> <summary>
+## Project Structure  
+```plaintext
 ├── TikTok/
 │   ├── hashtag_search.py       # Scrape TikTok videos by hashtag
 │   └── tiktok_api.py           # TikTok scraping and API functions
@@ -101,7 +101,7 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
 ├── final_hashtag_check.py      # Final check for missing URLs and metadata collection
 ├── requirements.txt            # Required Python packages
 └── README.md                   # Project documentation
-</details>
+```
 
 ## Script Overview  
 
