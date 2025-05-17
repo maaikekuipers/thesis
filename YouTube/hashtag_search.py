@@ -5,8 +5,8 @@ import json
 import os
 
 PLATFORM = 'youtube'
-COUNTRY = "UK"
-SEARCH_HASHTAG = "#aiartist"  # Change to the target hashtag
+COUNTRY = "NL"
+SEARCH_HASHTAG = "#ai"  # Change to the target hashtag
 TOTAL_VIDEOS_NEEDED = 250  # Number of videos to gather
 
 TARGET_CSV = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv'
@@ -24,7 +24,7 @@ if SEARCH_HASHTAG not in hashtag_set:
 with open(HASHTAG_JSON, 'w') as f:
     json.dump(hashtag_set, f, indent=4)  
 
-API_KEY = "AIzaSyATkdqf9FkrH4zuzf56_JdXB3ug2NY67Oo" # Fill in the API-key
+API_KEY = "..." # Fill in the API-key
 
 async def main():
     """
