@@ -77,7 +77,7 @@ To set up the environment for running this project, follow these steps:
     data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
 
     Additionally, a JSON file is created as an intermediate backup in case the script crashes:
-    data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
+    data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.json
     
   - Specify the desired number of videos to scrape by adjusting the `TOTAL_VIDEOS_NEEDED` variable.  
 
