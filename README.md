@@ -105,23 +105,26 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
 
 ## Script Overview  
 
-- **hashtag_search.py**  
-  - Scrapes video URLs for a specific hashtag and specific platform.  
+- **YouTube/hashtag_search.py**  
+  - Scrapes YouTube Shorts video URLs for a specific hashtag.  
   - Saves metadata to CSV and JSON files.
+
+- **TikTok/hashtag_search.py**  
+  - Scrapes TikTok video URLs for a specific hashtag.  
+  - Saves metadata to CSV and JSON files.
+ 
+- **TikTok/tiktok_api.py**  
+  - Handles TikTok scraping using Playwright and TikTok's API.  
+  - Retrieves detailed video metadata.
+
+- **YouTube/youtube_api.py**  
+  - Handles YouTube scraping and API interactions.  
+  - Retrieves Shorts video metadata.
 
 - **final_hashtag_check.py**  
   - Performs a final check for missing URLs from earlier searches.  
   - Collects and stores extra metadata.
 
-- **label_check.py**  
+- **YouTube/label_check.py**  
   - Scrapes YouTube Shorts pages to detect the presence of AI-generated content labels.  
   - Updates the dataset with `ai_label` and `sensitive_topic` flags.
-
-- **tiktok_api.py**  
-  - Handles TikTok scraping using Playwright and TikTok's API.  
-  - Retrieves detailed video metadata.
-
-- **youtube_api.py**  
-  - Handles YouTube scraping and API interactions.  
-  - Retrieves Shorts video metadata.
-
