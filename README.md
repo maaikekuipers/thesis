@@ -76,6 +76,8 @@ To set up the environment for running this project, follow these steps:
   - Set the `SEARCH_HASHTAG` variable to the desired hashtag.
     The video information will be automatically saved in the following structure:
     data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
+  - Specify the desired number of videos to scrape by adjusting the `TOTAL_VIDEOS_NEEDED` variable.  
+
 
 - **TikTok scraping requires manual captcha solving**, often triggered by the VPN location.  
 A 30-second pause is included in the script to allow you to complete this.
