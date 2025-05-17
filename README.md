@@ -59,6 +59,7 @@ To set up the environment for running this project, follow these steps:
 ### 2. Final Hashtag URL Check  
   ```bash
   python final_hashtag_check.py
+  ``` 
 
 ### 3. AI-Generated Content Label Check (YouTube Shorts Only)
   ```bash
