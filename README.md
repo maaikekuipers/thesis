@@ -57,8 +57,8 @@ To set up the environment for running this project, follow these steps:
 (Ensure PLATFORM and SEARCH_HASHTAG are set correctly in the script.) Repeat this for several hashtags and VPN locations.
 
 ### 2. Final Hashtag URL Check  
-```bash
-python final_hashtag_check.py
+  ```bash
+  python final_hashtag_check.py
 
 ### 3. AI-Generated Content Label Check (YouTube Shorts Only)
   ```bash
