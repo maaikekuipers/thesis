@@ -63,10 +63,9 @@ To set up the environment for running this project, follow these steps:
 
 
 ### Notes Before Running  
-
 - API keys and cookies are managed through variables in the scripts.  
   Ensure that a valid API key is provided in `YouTube/hashtag_search.py` and `final_hashtag_check.py` before running.  
-  Otherwise, the script will encounter errors when fetching metadata.
+  *Note:* If no API key is provided, the script will **not raise an error**, but the resulting CSV will remain empty.
 
 - Ensure that `headless = False` when running the platform-specific `hashtag_search.py` scripts.  
   This allows you to manually interact with the browser if needed.
@@ -76,6 +75,10 @@ To set up the environment for running this project, follow these steps:
   - Set the `SEARCH_HASHTAG` variable to the desired hashtag.
     The video information will be automatically saved in the following structure:
     data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
+
+    Additionally, a JSON file is created as an intermediate backup in case the script crashes:
+    data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
+    
   - Specify the desired number of videos to scrape by adjusting the `TOTAL_VIDEOS_NEEDED` variable.  
 
 
