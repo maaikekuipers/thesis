@@ -6,7 +6,7 @@ import os
 
 PLATFORM = 'tiktok' # Change to the target platform
 COUNTRY = "NL" # Change to the target country
-SEARCH_HASHTAG = "#creativeai"  # Change to the target hashtag
+SEARCH_HASHTAG = "#ai"  # Change to the target hashtag
 TOTAL_VIDEOS_NEEDED = 250  # Number of videos to scrape
 
 TARGET_CSV = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv'
