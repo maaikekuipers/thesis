@@ -20,11 +20,7 @@ To set up the environment for running this project, follow these steps:
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
 
-4. **Open a terminal and navigate to the project directory.**  
-   - Example:  
-     ```bash
-     cd path/to/your/project
-     ```
+4. **Clone this Project to your Device**  
 
 5. **Install required Python packages:**  
    ```bash
@@ -85,7 +81,7 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
 
 
 ## Project Structure
-
+<details> <summary>
 ├── TikTok/
 │   ├── hashtag_search.py       # Scrape TikTok videos by hashtag
 │   └── tiktok_api.py           # TikTok scraping and API functions
@@ -99,25 +95,27 @@ This script visits YouTube Shorts and checks for AI-generated content labels usi
 ├── final_hashtag_check.py      # Final check for missing URLs and metadata collection
 ├── requirements.txt            # Required Python packages
 └── README.md                   # Project documentation
+</details>
 
-Script Overview
+## Script Overview  
 
-- hashtag_search.py
-  - Scrapes video URLs for a specific hashtag and specific platform.
+- **hashtag_search.py**  
+  - Scrapes video URLs for a specific hashtag and specific platform.  
   - Saves metadata to CSV and JSON files.
 
-- final_hashtag_check.py
-  - Performs a final check for missing URLs from earlier searches.
+- **final_hashtag_check.py**  
+  - Performs a final check for missing URLs from earlier searches.  
   - Collects and stores extra metadata.
 
-- label_check.py
-  - Scrapes YouTube Shorts pages to detect the presence of AI-generated content labels.
-  - Updates the dataset with ai_label and sensitive_topic flags.
+- **label_check.py**  
+  - Scrapes YouTube Shorts pages to detect the presence of AI-generated content labels.  
+  - Updates the dataset with `ai_label` and `sensitive_topic` flags.
 
-- tiktok_api.py
-  - Handles TikTok scraping using Playwright and TikTok's API.
+- **tiktok_api.py**  
+  - Handles TikTok scraping using Playwright and TikTok's API.  
   - Retrieves detailed video metadata.
 
-- youtube_api.py
-  - Handles YouTube scraping and API interactions.
+- **youtube_api.py**  
+  - Handles YouTube scraping and API interactions.  
   - Retrieves Shorts video metadata.
+
