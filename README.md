@@ -61,6 +61,29 @@ To set up the environment for running this project, follow these steps:
 
 ## How to Run the Scripts  
 
+
+### Notes Before Running  
+
+- API keys and cookies are managed through variables in the scripts.  
+  Ensure that a valid API key is provided in `YouTube/hashtag_search.py` and `final_hashtag_check.py` before running.  
+  Otherwise, the script will encounter errors when fetching metadata.
+
+- Ensure that `headless = False` when running the platform-specific `hashtag_search.py` scripts.  
+  This allows you to manually interact with the browser if needed.
+
+- Before running either of the `hashtag_search.py` scripts, make sure to:  
+  - Change the `COUNTRY` variable to match your active VPN location.  
+  - Set the `SEARCH_HASHTAG` variable to the desired hashtag.
+    The video information will be automatically saved in the following structure:
+    data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv
+
+- **TikTok scraping requires manual captcha solving**, often triggered by the VPN location.  
+A 30-second pause is included in the script to allow you to complete this.
+
+- **YouTube scraping requires manual cookie rejection** (depending on the VPN location).  
+A 10-second pause is included in the script for this action.
+
+
 ### 1. Scrape Hashtag Videos  
 
 - **YouTube Shorts:**  
@@ -85,19 +108,6 @@ To set up the environment for running this project, follow these steps:
   ```
 
 This script visits YouTube Shorts and checks for AI-generated content labels using Playwright.
-
-## Notes  
-
-- API keys and cookies are managed through variables in the scripts.  
-  Ensure a valid API key is provided in `YouTube/hashtag_search.py` and `final_hashtag_check.py` before running.
-
-- Playwright may prompt for browser installation during the first run.
-
-- Ensure that `headless = False` when running the platform-specific `hashtag_search.py` scripts.  
-  This allows you to manually interact with the browser if needed.
-
-- TikTok scraping requires manual captcha solving.  
-  A 30-second pause is included in the script to handle this.
 
 
 ## Project Structure  
