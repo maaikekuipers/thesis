@@ -5,57 +5,91 @@ This project focuses on scraping and analyzing AI-generated content labels on Ti
 
 The project consists of several scripts for scraping URLs, fetching metadata, and checking AI labels directly on video pages.
 
-## Setup and Installation
+## Setup and Installation  
+
 To set up the environment for running this project, follow these steps:
 
-1. Ensure you have Python installed on your machine.
+1. **Ensure you have Python installed on your machine.**
 
-2. Install Git (required to clone repositories):
-   Git Installation Guide: https://github.com/git-guides/install-git
+2. **Install Git** (required to clone repositories):  
+   [Git Installation Guide](https://github.com/git-guides/install-git)  
 
-3. Install Playwright (used for automated browser scraping):
-   pip install playwright
+3. **Install Playwright** (used for automated browser scraping):  
+   ```bash
+   pip install playwright  
    playwright install
    Playwright Documentation: https://playwright.dev/docs/intro
 
-4. Set up YouTube API Access (required for fetching video metadata):
-   YouTube Data API v3 Guide: https://developers.google.com/youtube/v3/getting-started
+5. **Clone or download the project files to your local machine.**  
+   - If using Git, run:  
+     ```bash
+     git clone <repository-url>
+     ```  
+   - Or manually download and extract the files from the repository.
 
-5. Clone or download the project files to your local machine.
+6. **Open a terminal and navigate to the project directory.**  
+   - Example:  
+     ```bash
+     cd path/to/your/project
+     ```
 
-6. Open a terminal and navigate to the project directory.
-
-7. Install required Python packages:
+7. **Install required Python packages:**  
+   ```bash
    pip install -r requirements.txt
 
-8. Store authentication cookies for YouTube (used for label scraping):
-   playwright codegen youtube.com --save-storage=youtube_cookies.json
-   Click on “Reject all cookies” when prompted.
-   Then close the browser window to save the cookies.
+8. **Store authentication cookies for YouTube (used for label scraping):**  
+   - Open a terminal and run the following command to start Playwright’s code generation tool:  
+     ```bash
+     playwright codegen youtube.com --save-storage=YouTube/youtube_cookies.json
+     ```
+   - In the opened browser window:  
+     - Click on **“Reject all cookies”** when prompted.  
+     - Close the browser window to automatically save the cookies.
 
-## How to Run the Scripts
+   - *Important:* Ensure that the `youtube_cookies.json` file is stored in the `YouTube` folder.  
+   - This cookie file is required for authenticated access during YouTube label verification.
+  
+9. **Use a VPN to Simulate Geographic Locations:**  
+   - To simulate different geographic locations during data collection, use a **VPN**.  
+   - The VPN service used for this project was **Surfshark**, but other providers can also be used.  
+   - Activate the VPN and select the target country **before** running the scraping scripts.
 
-1. Scrape Hashtag Videos
-- YouTube Shorts:
-  python hashtag_search.py
-- TikTok Videos:
-  python hashtag_search.py
-  (Ensure PLATFORM and SEARCH_HASHTAG are set correctly in the script.)
+## How to Run the Scripts  
 
-2. Final Hashtag URL Check
-  python final_hashtag_check.py
+### 1. Scrape Hashtag Videos  
 
-3. AI-Generated Content Label Check (YouTube Shorts Only)
+- **YouTube Shorts:**  
+  ```bash
+  python YouTube/hashtag_search.py
+- **TikTok Videos:**
+  ```bash
+  python TikTok/hashtag_search.py
+  
+(Ensure PLATFORM and SEARCH_HASHTAG are set correctly in the script.) Repeat this for several hashtags and VPN locations.
+
+### 2. Final Hashtag URL Check  
+```bash
+python final_hashtag_check.py
+
+### 3. AI-Generated Content Label Check (YouTube Shorts Only)
+  ```bash
   python YouTube/label_check.py
 
 This script visits YouTube Shorts and checks for AI-generated content labels using Playwright.
 
-## Notes
+## Notes  
 
-- API keys and cookies are managed through variables in the scripts. Ensure valid API key are in the YouTube hashtag_search.py before running.
+- API keys and cookies are managed through variables in the scripts.  
+  Ensure a valid API key is provided in `YouTube/hashtag_search.py` before running.
+
 - Playwright may prompt for browser installation during the first run.
-- Ensure that headless = False when you run the platforms specific hashtag_search.py. 
-- TikTok scraping requires manual captcha solving. A 30-second pause is included to handle this.
+
+- Ensure that `headless = False` when running the platform-specific `hashtag_search.py` scripts.  
+  This allows you to manually interact with the browser if needed.
+
+- TikTok scraping requires manual captcha solving.  
+  A 30-second pause is included in the script to handle this.
+
 
 ## Project Structure
 
