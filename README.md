@@ -1,9 +1,18 @@
 # EPA2942 Master Thesis Maaike Kuipers
 
-## Introduction
-This project focuses on scraping and analyzing AI-generated content labels on TikTok and YouTube Shorts. It collects video URLs based on hashtags, retrieves metadata using platform APIs, and analyzes the presence and impact of AI-content labels.
+## Introduction  
 
-The project consists of several scripts for scraping URLs, fetching metadata, and checking AI labels directly on video pages.
+This project was developed as part of the Master Thesis for the EPA2942 course. It focuses on the automated collection and analysis of **AI-generated content labels** on **TikTok** and **YouTube Shorts**. The main goal is to explore how frequently AI-content labels appear on these platforms and assess their potential impact on user engagement.
+
+The project pipeline automates the following tasks:  
+- Scraping video URLs based on specific hashtags.  
+- Retrieving detailed metadata using official and unofficial platform APIs.
+
+This project builds upon and integrates functionalities from the following repositories:  
+- [davidteather/TikTok-Api](https://github.com/davidteather/TikTok-Api) – for interacting with TikTok's API.  
+- [networkdynamics/pytok](https://github.com/networkdynamics/pytok) – for TikTok scraping methodologies.
+
+The collected data supports further statistical analyses and modeling conducted as part of the thesis research, providing insights into the prevalence of AI-generated content and its relationship with user behavior. These analyses contribute directly to the findings presented in (repository link).
 
 ## Setup and Installation  
 
