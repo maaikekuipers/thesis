@@ -83,10 +83,7 @@ To set up the environment for running this project, follow these steps:
 
 
 - **TikTok scraping requires manual captcha solving** (depending on the VPN location).  
-A 30-second pause is included in the script to allow you to complete this.
-When extracting TikTok metadata, a browser window will open that may appear inactive.  
-  However, the script is actively gathering information in the background.  
-  Progress updates are printed to the terminal every 25 videos processed.
+A 30-second pause is included in the script to allow you to complete this. When extracting TikTok metadata, a browser window will open that may appear inactive.   However, the script is actively gathering information in the background. Progress updates are printed to the terminal every 25 videos processed.
 
 - **YouTube scraping requires manual cookie rejection** (depending on the VPN location).  
 A 10-second pause is included in the script for this action.
