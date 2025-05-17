@@ -14,7 +14,6 @@ class YouTubeScraper:
     def __init__(self, target_urls=50, min_scrolls=5, search_query=None, headless = False):
         self.target_urls = target_urls
         self.min_scrolls = min_scrolls
-        self.max_scroll_attempts = max_scroll_attempts
         self.processed_urls = set()
         self.search_query = search_query
         self.headless = headless
