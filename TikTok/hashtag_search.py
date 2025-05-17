@@ -9,8 +9,8 @@ COUNTRY = "NL" # Change to the target country
 SEARCH_HASHTAG = "#creativeai"  # Change to the target hashtag
 TOTAL_VIDEOS_NEEDED = 250  # Number of videos to scrape
 
-TARGET_CSV = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}_2.csv'
-TARGET_JSON = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}_2.json'
+TARGET_CSV = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.csv'
+TARGET_JSON = f'data/{PLATFORM}/{SEARCH_HASHTAG}/{SEARCH_HASHTAG}_{COUNTRY}.json'
 HASHTAG_JSON = f'data/hashtag_set.json'
 TARGET_FOLDER = f'data/{PLATFORM}/{SEARCH_HASHTAG}'
 
