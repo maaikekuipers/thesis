@@ -51,7 +51,7 @@ class YouTubeScraper:
             # await page.wait_for_selector("a[href*='/shorts/']", timeout=15000)
             print("Page loaded, starting scrolling...")
 
-            # **Step 1: Scroll Until Enough Videos Are Loaded**
+            # Scroll Until Enough Videos Are Loaded
             unique_results = set()
             self.scroll_attempts = 0
             no_new_shorts_count = 0  # Tracks how many times no new videos are found
@@ -63,7 +63,7 @@ class YouTubeScraper:
                 print(f"Scrolling... (Collected: {len(unique_results)}/{self.target_urls})")
                 await self.scroll_page(page)  # Use optimized scrolling
 
-                # **Extract Shorts URLs**
+                # Extract Shorts URLs
                 videos = await page.locator("a[href*='/shorts/']").all()
                 for video in videos:
                     try:
@@ -74,7 +74,7 @@ class YouTubeScraper:
                         print(f"Error processing video: {e}")
                         continue  
 
-                # **Check if new Shorts were added**
+                # Check if new Shorts were added
                 if len(unique_results) == previous_video_count:
                     no_new_shorts_count += 1
                     print(f"No new Shorts found ({no_new_shorts_count}/{self.min_scrolls}).")
@@ -103,7 +103,7 @@ class YouTubeScraper:
             # make a correct url of the unique results
             unique_results = [f"https://www.youtube.com{path}" for path in unique_results]
 
-            # **Save Unique Shorts URLs**
+            # Save Unique Shorts URLs
             results_list = list(unique_results)
 
             await browser.close()
@@ -129,10 +129,10 @@ class YouTubeScraper:
             await page.evaluate(f"() => window.scrollTo(0, {current_scroll_position});")
             await asyncio.sleep(random.uniform(0.02, 0.1))  # Short pauses for smooth effect
 
-        # **Extra delay to allow YouTube to load new content**
+        # Extra delay to allow YouTube to load new content
         await asyncio.sleep(random.uniform(2, 4))  
 
-        # **Pause briefly every 5 scrolls to make it not too agressive**
+        # Pause briefly every 5 scrolls to make it not too agressive
         if self.scroll_attempts % 5 == 0:
             print("Pausing briefly to make it not too agressive...")
             await asyncio.sleep(random.uniform(5, 8))
