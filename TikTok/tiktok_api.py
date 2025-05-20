@@ -46,7 +46,7 @@ class TikTokScraper:
             await page.evaluate("document.body.style.zoom='50%'")  # Zoom out to 50%
             print("Page loaded, starting scrolling...")
 
-            # **Step 1: Scroll Until Enough Videos Are Loaded**
+            # Scroll Until Enough Videos Are Loaded
             unique_results = set()
             self.scroll_attempts = 0
             no_new_shorts_count = 0  # Tracks how many times no new videos are found
@@ -58,7 +58,7 @@ class TikTokScraper:
                 print(f"Scrolling... (Collected: {len(unique_results)}/{self.target_urls})")
                 await self.scroll_page(page)  # Use optimized scrolling
 
-                # **Extract Shorts URLs**
+                # Extract Shorts URLs
                 videos = await page.locator("a[href*='/video/']").all()
                 for video in videos:
                     try:
@@ -118,7 +118,7 @@ class TikTokScraper:
             print("Finished scrolling. Extracting TikTok links...")
             print(f"Total unique TikTok URLs found: {len(unique_results)}")
 
-            # **Step 2: Save Unique Shorts URLs**
+            # Save Unique Shorts URLs
             results_list = list(unique_results)
 
             await browser.close()
@@ -144,10 +144,10 @@ class TikTokScraper:
             await page.evaluate(f"() => window.scrollTo(0, {current_scroll_position});")
             await asyncio.sleep(random.uniform(0.02, 0.1))  # Short pauses for smooth effect
 
-        # **Extra delay to allow TikTok to load new content**
+        # Extra delay to allow TikTok to load new content
         await asyncio.sleep(random.uniform(2, 4))  
 
-        # **Pause briefly every 5 scrolls to make it not too agressive**
+        # Pause briefly every 5 scrolls to make it not too agressive
         if self.scroll_attempts % 5 == 0:
             print("Pausing briefly to make it not too agressive...")
             await asyncio.sleep(random.uniform(5, 8))
