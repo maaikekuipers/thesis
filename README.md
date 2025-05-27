@@ -10,7 +10,7 @@ The project pipeline automates the following tasks:
 
 This project builds upon and integrates functionalities from the following repositories:  
 - [davidteather/TikTok-Api](https://github.com/davidteather/TikTok-Api) – for interacting with TikTok's API.  
-- [networkdynamics/pytok](https://github.com/networkdynamics/pytok) – for TikTok scraping methodologies.
+- [networkdynamics/pytok](https://github.com/networkdynamics/pytok) – for TikTok scrolling methodologies.
 
 The collected data supports further statistical analyses and modeling conducted as part of the thesis research, providing insights into the prevalence of AI-generated content and its relationship with user behavior. These analyses contribute directly to the findings presented in the TU Delft Repository.
 
