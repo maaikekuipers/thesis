@@ -65,13 +65,13 @@ class TikTokScraper:
                         video_url = await video.get_attribute("href")
                         if video_url and "/video/" in video_url:
 
-                            # Extract the username and video ID from the URL
+                            # Extract the creatorname and video ID from the URL
                             parts = video_url.split("/")
-                            username = parts[3]  # Username is the second element
+                            creatorname = parts[3]  # creatorname is the second element
                             video_id = parts[-1]  # Video ID is always the last element
 
                             # Construct the full TikTok video URL
-                            formatted_url = f"https://www.tiktok.com/{username}/video/{video_id}"
+                            formatted_url = f"https://www.tiktok.com/{creatorname}/video/{video_id}"
                             
                             # Add the properly formatted URL to the set
                             unique_results.add(formatted_url)
@@ -100,13 +100,13 @@ class TikTokScraper:
 
                     # Ensure the URL is not None and contains "/video/"
                     if video_url and "/video/" in video_url:
-                        # Extract the username and video ID from the URL
+                        # Extract the creatorname and video ID from the URL
                         parts = video_url.split("/")
-                        username = parts[3]  # Username is the second element
+                        creatorname = parts[3]  # creatorname is the second element
                         video_id = parts[-1]  # Video ID is always the last element
 
                         # Construct the full TikTok video URL
-                        formatted_url = f"https://www.tiktok.com/{username}/video/{video_id}"
+                        formatted_url = f"https://www.tiktok.com/{creatorname}/video/{video_id}"
 
                         # Add the properly formatted URL to the set
                         unique_results.add(formatted_url)
@@ -209,6 +209,8 @@ class TikTokAPI:
                     comments = stats.get("commentCount", 0)
                     shares = stats.get("shareCount", 0)
                     views = stats.get("playCount", 0)
+
+                    creatorname = url.split("/")[3]  # creatorname is the second element
                     
                     hashtags_lower = [tag.lower() for tag in hashtags]  # Convert all hashtags to lowercase
 
@@ -224,7 +226,8 @@ class TikTokAPI:
                                 "comments": comments,
                                 "shares": shares,
                                 "hashtags": hashtags,
-                                "publishedAt" : datetime.datetime.fromtimestamp(int(create_time)).strftime('%Y-%m-%d %H:%M:%S')
+                                "publishedAt" : datetime.datetime.fromtimestamp(int(create_time)).strftime('%Y-%m-%d %H:%M:%S'),
+                                "creatorname": creatorname
                             })
 
                     if info_gathered % 25 == 0:
