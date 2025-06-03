@@ -175,6 +175,7 @@ class YouTubeAPI:
         if not video_ids:
             print("No valid video IDs found.")
             return []
+        
 
         video_details = []
         request_count = 0
@@ -186,6 +187,7 @@ class YouTubeAPI:
                 "id": ",".join(video_ids_batch), 
                 "key": self.api_key
             }
+
             response = requests.get(f"{BASE_URL}/videos", params=params)
             data = response.json()
             request_count += 1
@@ -196,9 +198,19 @@ class YouTubeAPI:
                 snippet = item["snippet"]
                 hashtags = self.extract_hashtags(snippet["title"]) + self.extract_hashtags(snippet["description"])
                 hashtags_lower = [tag.lower() for tag in hashtags]  # Convert all hashtags to lowercase
+                channel_id = snippet.get("channelId", "")
 
                 # Filter: Only include if the search term is present
                 if any(search_hashtag in hashtags_lower for search_hashtag in search_hashtags_lower):
+                    channel_params = {
+                        "part": "snippet",
+                        "id": channel_id,
+                        "key": self.api_key
+                    }
+                    channel_info = requests.get(f'{BASE_URL}/channels', params=channel_params)
+                    channel_data = channel_info.json()
+                    creatorname = channel_data['items'][0]['snippet']['customUrl'] if channel_data['items'] else 'Unknown Channel'
+
                     if f"https://www.youtube.com/shorts/{video_id}" not in {entry["url"] for entry in video_details}:  # Check whether the URL is already in the list
                         video_details.append({
                             "url": f"https://www.youtube.com/shorts/{video_id}",
@@ -206,9 +218,10 @@ class YouTubeAPI:
                             "likes": stats.get("likeCount", 0),
                             "comments": stats.get("commentCount", 0),
                             "publishedAt": snippet["publishedAt"],
-                            "hashtags": hashtags # keep as list
+                            "hashtags": hashtags, 
+                            "creatorname":creatorname # keep as list
                         })
-
+                
         # print(f"Retrieved {len(video_details)} valid Shorts in {request_count} API requests.")
         return pd.DataFrame(video_details)
 
@@ -288,5 +301,4 @@ class LabelCheckerYouTube:
 
             # Close the browser
             await browser.close()
-
 
