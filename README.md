@@ -18,7 +18,7 @@ The collected data supports further statistical analyses and modeling conducted 
 
 To set up the environment for running this project, follow these steps:
 
-1. **Ensure you have Python installed on your machine.**
+1. **Ensure you have Python installed on your machine. Anaconda is recommended**
 
 2. **Install Git** (required to clone repositories):  
    [Git Installation Guide](https://github.com/git-guides/install-git)
@@ -28,7 +28,7 @@ To set up the environment for running this project, follow these steps:
 
 4. **Clone this Project to your Device**  
 
-5. **Create and Activate a New Virtual Environment (Conda Recommended):**  
+5. **Create and Activate a New Virtual Environment (Conda Recommended, in the Anaconda Prompt):**  
    ```bash
    conda create --name yourname-env python=3.11
    conda activate yourname-env
