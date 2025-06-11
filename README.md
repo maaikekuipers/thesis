@@ -28,21 +28,29 @@ To set up the environment for running this project, follow these steps:
 
 4. **Clone this Project to your Device**  
 
-5. **Create and Activate a New Virtual Environment (Conda Recommended, in the Anaconda Prompt):**  
+5. **Create and Activate a New Virtual Environment (Conda Recommended, in the Anaconda Prompt):**
+
+   - Open the Start Menu and launch Anaconda Prompt (not PowerShell)
+   - Then run:
    ```bash
    conda create --name yourname-env python=3.11
    conda activate yourname-env
    ```
+6. **Navigate to the Project Directory:**
+(adjust the path to match your system setup)
+```bash
+cd "path to the project"
+```
 
-6. **Install required Python packages:**  
+7. **Install required Python packages:**  
    ```bash
    pip install -r requirements.txt
    ```
-7. **Install Playwright Browsers:**
+8. **Install Playwright Browsers:**
    ```bash
    playwright install
    ```
-8. **Store authentication cookies for YouTube (used for label scraping):**  
+9. **Store authentication cookies for YouTube (used for label scraping):**  
    - Open a terminal and run the following command to start Playwright’s code generation tool:  
      ```bash
      playwright codegen youtube.com --save-storage=YouTube/youtube_cookies.json
@@ -54,7 +62,7 @@ To set up the environment for running this project, follow these steps:
    - *Important:* Ensure that the `youtube_cookies.json` file is stored in the `YouTube` folder.  
    - This cookie file is required for authenticated access during YouTube label verification.
   
-9. **Use a VPN to Simulate Geographic Locations:**  
+10. **Use a VPN to Simulate Geographic Locations:**  
    - To simulate different geographic locations during data collection, use a **VPN**.  
    - The VPN service used for this project was **Surfshark**, but other providers can also be used.  
    - Activate the VPN and select the target country **before** running the scraping scripts.
