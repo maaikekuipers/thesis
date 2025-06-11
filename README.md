@@ -30,17 +30,17 @@ To set up the environment for running this project, follow these steps:
 
 5. **Create and Activate a New Virtual Environment (Conda Recommended, in the Anaconda Prompt):**
 
-   - Open the Start Menu and launch Anaconda Prompt (not PowerShell)
-   - Then run:
+   Open the Start Menu and launch Anaconda Prompt (not PowerShell)
+   Then run:
    ```bash
    conda create --name yourname-env python=3.11
    conda activate yourname-env
    ```
 6. **Navigate to the Project Directory:**
 (adjust the path to match your system setup)
-```bash
-cd "path to the project"
-```
+   ```bash
+   cd "path to the project"
+   ```
 
 7. **Install required Python packages:**  
    ```bash
