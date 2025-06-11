@@ -36,8 +36,7 @@ To set up the environment for running this project, follow these steps:
    conda create --name yourname-env python=3.11
    conda activate yourname-env
    ```
-6. **Navigate to the Project Directory:**
-(adjust the path to match your system setup)
+6. **Navigate to the Project Directory (adjust the path to match your system setup):**
    ```bash
    cd "path to the project"
    ```
